@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if (( $# != 2 ))
+then
+  echo "usage : division <entier1> <entier2_non_nul>
+affiche le quotient de <entier1> par <entier2>"
+else
+  if (( $2 == 0 ))
+  then
+    echo "usage : division <entier1> <entier2_non_nul>
+  affiche le quotient de <entier1> par <entier2>"
+  else
+  echo "$1/$2 == $(($1 / $2))"
+  fi
+fi

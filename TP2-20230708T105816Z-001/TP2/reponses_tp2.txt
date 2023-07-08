@@ -1,0 +1,5 @@
+Auteur : Léo PORTE
+
+2.1)
+
+3) La commande tapée change donc la commande tapée est ./new_param au lieu de ./param mais hormis ça le fonctionnement est resté identique à celui du script param.

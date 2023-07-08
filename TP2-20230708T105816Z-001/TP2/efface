@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ ! -d "$HOME/corbeille" ] # On crée le fichier corbeille s'il n'existe pas
+then
+  mkdir $HOME/corbeille
+fi
+
+for i in $*
+do
+  mv $i $HOME/corbeille
+done
+
+for i in $*
+do
+  mv $i $HOME/corbeille
+done

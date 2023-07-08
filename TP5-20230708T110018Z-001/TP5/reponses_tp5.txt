@@ -1,0 +1,16 @@
+Auteur : Léo PORTE
+
+1) Une variable shell est une variable pouvant être utilisée par les scripts bash définissant des valeurs globales ayant leur déclaration et définition dans un autre fichier. On peut parler de variable définie par un processus père à celui du shell.
+
+2) FAV=$HOME/.favoris_bash
+
+3) .bashrc est un script lancé au début de chaque exécution de script bash. Son exécution est un processus père à celui du script.
+
+4) source permet de faire passer le script passé en paramètre dans l'environnement courant (ici le terminal).
+
+5) On vérifie d'abord si le répertoire .bash_scripts existe.
+Si oui, alors pour chaque fichier .sh contenu dans ce répertoire, on le passe en tant que script père de l'environnement courant (le terminal) avec la commande source, de sorte à pouvoir utiliser les fonctions définies dans ce script sans l'appeler.
+
+6) Q renomme le raccourci passé en deuxième argument en le raccourci passé en premier argument.
+
+Q R L renomme le raccourci R en un raccourci L.

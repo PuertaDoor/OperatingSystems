@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if (( $# != 3 ))
+then
+  echo "Usage : $0 <entier1> <entier2> <fichier>
+  Entiers > 0, entier1<=entier2 et fichier le nom du fichier ou un chemin y menant (doit exister)"
+  exit 1
+fi
+
+if (( $1 <= 0 || $2 <= 0 || $1 > $2 ))
+then
+  echo "Usage : $0 <entier1> <entier2> <fichier>
+  Entiers > 0, entier1<=entier2 et fichier le nom du fichier ou un chemin y menant (doit exister)"
+  exit 1
+fi
+
+if [ ! -f $3 ]
+then
+  echo "Usage : $0 <entier1> <entier2> <fichier>
+  Entiers > 0, entier1<=entier2 et fichier le nom du fichier ou un chemin y menant (doit exister)"
+  exit 1
+fi
+
+head -n $2 $3 | tail -n $(( $2 - $1 + 1 )) # On affiche les entier2 premières lignes du fichier avec head et tail va afficher les dernières lignes voulues depuis head

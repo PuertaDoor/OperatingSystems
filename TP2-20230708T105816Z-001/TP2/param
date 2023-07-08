@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "La commande tapée est : $0
+Il y a $# paramètre/s
+Le premier paramètre est $1
+Le deuxième paramètre est $2
+Le troisième paramètre est $3
+La liste de tous les paramètres est $*"

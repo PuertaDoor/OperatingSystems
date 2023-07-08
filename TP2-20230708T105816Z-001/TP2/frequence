@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+if (( $# != 1 ))
+then
+  echo "Usage : $0 <fichier>"
+  exit 1
+fi
+
+if [ ! -f $1 ]
+then
+  echo "Fichier $1 inexistant ou erroné"
+  exit 1
+fi
+
+comptedebut=$(grep -n "DEBUT DU FICHIER" $1 | cut -d: -f1 | wc -l)
+comptefin=$(grep -n "FIN DU FICHIER" $1 | cut -d: -f1 | wc -l)
+
+if (( $comptefin != 1 || $comptedebut != 1 ))
+then
+  echo "Trop ou pas assez de marqueur de début/fin de fichier dans $1"
+  exit 1
+fi
+
+debut=$(grep -n "DEBUT DU FICHIER" $1 | cut -d: -f1)
+fin=$(grep -n "FIN DU FICHIER" $1 | cut -d: -f1)
+
+echo "$debut $fin"
+
+texte=$(./extract $debut $fin $1)
+
+echo "$texte" | tr [:upper:] [:lower:] | tr -c [a-z] ' ' | tr ' ' '\n' | sort | uniq -c # tr [:upper:] [:lower:] permet la casse
